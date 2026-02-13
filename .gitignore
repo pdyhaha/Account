@@ -46,3 +46,6 @@ app.*.map.json
 
 # Large model files
 *.onnx
+
+# Git worktrees (local only)
+.worktrees/
