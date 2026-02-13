@@ -42,9 +42,9 @@ static const String llmApiKey =
 Run:
 ```bash
 cd /Users/jayce_pu/workspace/Account
-rg -n \"d863d891|ep-2026|ark\\.cn-beijing\\.volces\\.com\" lib || true
+rg -n \"d863d891\" lib || true
 ```
-Expected: no matches for removed hardcoded values.
+Expected: no matches for removed hardcoded API key value.
 
 **Step 4: Commit**
 
@@ -134,4 +134,3 @@ Plan complete and saved to `/Users/jayce_pu/workspace/Account/docs/plans/2026-02
 
 1. Subagent-Driven (this session) - fresh subagent per task, review between tasks
 2. Parallel Session (separate) - open a new session with executing-plans and run task-by-task
-
