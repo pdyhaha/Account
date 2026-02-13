@@ -17,13 +17,23 @@ void main() async {
   await PetService.initializePetAssets();
   
   // 初始化 WorkManager
-  Workmanager().initialize(
-    bg.callbackDispatcher,
-    isInDebugMode: false,
-  );
+  try {
+    await Workmanager().initialize(
+      bg.callbackDispatcher,
+      isInDebugMode: false,
+    );
+  } catch (e, st) {
+    debugPrint('Workmanager initialize failed: $e');
+    debugPrint('$st');
+  }
   
   // 注册定时任务
-  _scheduleDailyReport();
+  try {
+    await _scheduleDailyReport();
+  } catch (e, st) {
+    debugPrint('Workmanager register daily report task failed: $e');
+    debugPrint('$st');
+  }
   
   // 监听 Widget 点击
   HomeWidget.setAppGroupId('group.pet_ledger_widget'); 
@@ -36,7 +46,7 @@ void main() async {
   );
 }
 
-void _scheduleDailyReport() {
+Future<void> _scheduleDailyReport() async {
   final now = DateTime.now();
   var target = DateTime(now.year, now.month, now.day, 22, 0);
   
@@ -46,7 +56,7 @@ void _scheduleDailyReport() {
   
   final initialDelay = target.difference(now);
   
-  Workmanager().registerPeriodicTask(
+  await Workmanager().registerPeriodicTask(
     "daily_report",
     bg.kDailyReportTask,
     frequency: const Duration(hours: 24),
