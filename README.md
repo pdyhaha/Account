@@ -2,6 +2,23 @@
 
 A new Flutter project.
 
+## Configuration
+
+This app expects runtime configuration via `--dart-define` (to avoid committing secrets).
+
+```bash
+flutter run --dart-define=LLM_API_KEY=...
+```
+
+Optional overrides:
+
+```bash
+flutter run \
+  --dart-define=LLM_API_KEY=... \
+  --dart-define=LLM_BASE_URL=https://ark.cn-beijing.volces.com/api/v3 \
+  --dart-define=LLM_MODEL=...
+```
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
