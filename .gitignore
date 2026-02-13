@@ -49,3 +49,6 @@ app.*.map.json
 
 # Git worktrees (local only)
 .worktrees/
+
+# Local Gradle user home override (for constrained networks)
+.gradle-user-home/
