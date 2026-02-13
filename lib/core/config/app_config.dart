@@ -2,9 +2,21 @@ class AppConfig {
   AppConfig._();
 
   // ========== LLM 配置 (火山引擎) ==========
-  static const String llmApiKey = 'd863d891-00f5-47f9-8852-f51280c32875';
-  static const String llmBaseUrl = 'https://ark.cn-beijing.volces.com/api/v3';
-  static const String llmModel = 'ep-20260107165320-6hsq2';
+  // Prefer injecting secrets via `--dart-define` so nothing sensitive is
+  // committed to source control.
+  //
+  // Example:
+  // flutter run --dart-define=LLM_API_KEY=... --dart-define=LLM_BASE_URL=... --dart-define=LLM_MODEL=...
+  static const String llmApiKey =
+      String.fromEnvironment('LLM_API_KEY', defaultValue: '');
+  static const String llmBaseUrl = String.fromEnvironment(
+    'LLM_BASE_URL',
+    defaultValue: 'https://ark.cn-beijing.volces.com/api/v3',
+  );
+  static const String llmModel = String.fromEnvironment(
+    'LLM_MODEL',
+    defaultValue: 'ep-20260107165320-6hsq2',
+  );
   
   // ========== 语音识别配置 (百度) ==========
   // 请访问 https://cloud.baidu.com/doc/SPEECH/s/Vk38lxil5 申请
