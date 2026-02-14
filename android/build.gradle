@@ -1,13 +1,3 @@
-allprojects {
-    repositories {
-        // Mirror repositories help when Google Maven is not reachable.
-        maven { url "https://maven.aliyun.com/repository/google" }
-        maven { url "https://maven.aliyun.com/repository/public" }
-        google()
-        mavenCentral()
-    }
-}
-
 rootProject.buildDir = "../build"
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
