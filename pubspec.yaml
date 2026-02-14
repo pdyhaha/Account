@@ -47,7 +47,8 @@ dependencies:
   audioplayers: ^5.2.1
 
   # 震动反馈
-  vibration: ^1.8.4
+  # NOTE: Removed `vibration` plugin because it is unused in this app and
+  # fails to compile with recent Flutter/Android embeddings.
 
   # Android 小组件
   home_widget: ^0.7.0
