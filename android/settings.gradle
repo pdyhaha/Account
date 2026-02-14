@@ -37,6 +37,10 @@ dependencyResolutionManagement {
         maven { url 'https://maven.aliyun.com/repository/google' }
         maven { url 'https://maven.aliyun.com/repository/public' }
         // -----------------------
+        // Flutter Android embedding artifacts (io.flutter:*)
+        // Default host is often blocked; include CFUG mirror first.
+        maven { url 'https://storage.flutter-io.cn/download.flutter.io' }
+        maven { url 'https://storage.googleapis.com/download.flutter.io' }
         google()
         mavenCentral()
     }
