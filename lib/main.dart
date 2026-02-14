@@ -61,7 +61,7 @@ Future<void> _scheduleDailyReport() async {
     bg.kDailyReportTask,
     frequency: const Duration(hours: 24),
     initialDelay: initialDelay,
-    existingWorkPolicy: ExistingWorkPolicy.keep,
+    existingWorkPolicy: ExistingPeriodicWorkPolicy.keep,
     constraints: Constraints(
       networkType: NetworkType.connected,
     ),

@@ -175,7 +175,7 @@ class BackgroundService {
         networkType: NetworkType.connected,
         requiresBatteryNotLow: true,
       ),
-      existingWorkPolicy: ExistingWorkPolicy.update,
+      existingWorkPolicy: ExistingPeriodicWorkPolicy.update,
     );
   }
 
